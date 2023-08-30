@@ -1,17 +1,28 @@
-# Compiler
+# Compiler to use
 CXX = g++-13
 
 # Compiler flags
-CXXFLAGS = -Wall -Iinclude/ -std=c++14
+CXXFLAGS = -Wall -std=c++14
 
-# Source files
-SOURCES = $(wildcard src/*.cpp)
+# Directories
+SRC_DIR = src/
+INCLUDE_DIR = include/
+OBJ_DIR = obj/
+BIN_DIR = bin/
 
-# Output executable
-OUTPUT = MyZooApp.out
+# Files
+SOURCES = $(wildcard $(SRC_DIR)*.cpp)
+OBJECTS = $(SOURCES:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
+EXECUTABLE = $(BIN_DIR)MyZooApp
 
-all:
-	$(CXX) $(CXXFLAGS) $(SOURCES) -o $(OUTPUT)
+# Targets
+all: $(EXECUTABLE)
+
+$(EXECUTABLE): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) $^ -o $@
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.cpp
+	$(CXX) $(CXXFLAGS) -I$(INCLUDE_DIR) -c $< -o $@
 
 clean:
-	rm -f $(OUTPUT)
+	rm -f $(OBJ_DIR)*.o $(EXECUTABLE)

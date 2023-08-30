@@ -67,14 +67,37 @@ MyZooProject/
 
 ## Building the Project
 
-1. Navigate to the `MyZooProject/` directory.
-2. Run `make` to compile the project.
+Certainly! I'll add a section in the README that explains the updated Makefile, including the new `directories` target for automatic directory creation.
 
-    ```bash
-    make
-    ```
+### Makefile Explained
 
-This will produce an executable named `MyZooApp.out`.
+The Makefile uses the following variables and rules:
+
+- `CXX`: Specifies the C++ compiler to use. In this case, `g++`.
+
+- `CXXFLAGS`: Specifies the compiler flags. `-Wall` enables all warnings, and `-std=c++14` sets the C++ standard to C++14.
+
+- `SRC_DIR`, `INCLUDE_DIR`, `OBJ_DIR`, `BIN_DIR`: Directories for source files, include files, object files, and the binary executable, respectively.
+
+- `SOURCES`, `OBJECTS`, `EXECUTABLE`: Variables to hold the source files, object files, and the final executable.
+
+- `all`: The default target. It depends on `directories` and `$(EXECUTABLE)`, so it triggers the creation of necessary directories and the compilation of the executable.
+
+- `directories`: This target creates the `obj/` and `bin/` directories if they don't exist. It uses `mkdir -p` to ensure that the directories are created.
+
+- `$(EXECUTABLE)`: This target compiles the object files into the final executable.
+
+- `$(OBJ_DIR)%.o`: This pattern rule compiles each `.cpp` file into an `.o` object file.
+
+- `clean`: This target removes all the object files and the executable.
+
+To compile the project, navigate to the `MyZooProject/` directory and run:
+
+```bash
+make
+```
+
+This will produce an executable named `MyZooApp` in the `bin/` directory.
 
 ## Running the Project
 
