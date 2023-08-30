@@ -16,7 +16,11 @@ OBJECTS = $(SOURCES:$(SRC_DIR)%.cpp=$(OBJ_DIR)%.o)
 EXECUTABLE = $(BIN_DIR)MyZooApp
 
 # Targets
-all: $(EXECUTABLE)
+all: directories $(EXECUTABLE)
+
+directories: 
+	@mkdir -p $(OBJ_DIR)
+	@mkdir -p $(BIN_DIR)
 
 $(EXECUTABLE): $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@

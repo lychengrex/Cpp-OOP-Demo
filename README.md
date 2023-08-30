@@ -91,7 +91,7 @@ The Makefile uses the following variables and rules:
 
 - `clean`: This target removes all the object files and the executable.
 
-To compile the project, navigate to the `MyZooProject/` directory and run:
+To compile the project, navigate to the root directory of this repository and run:
 
 ```bash
 make
