@@ -8,12 +8,16 @@ Zoo::~Zoo() {
     std::cout << "Zoo destructor called.\n";
 }
 
-void Zoo::addAnimal(Animal* animal) {
-    animals.push_back(animal);
+void Zoo::addAnimal(std::unique_ptr<Animal> animal) {
+    if (animal) {  // Check for null pointer
+        animals.push_back(std::move(animal));
+    }
 }
 
 void Zoo::makeAllAnimalsSound() {
     for (const auto& animal : animals) {
-        animal->makeSound();
+        if (animal) {  // Check for null pointer
+            animal->makeSound();
+        }
     }
 }

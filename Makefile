@@ -2,7 +2,7 @@
 CXX = g++-13
 
 # Compiler flags
-CXXFLAGS = -Wall -Iinclude/
+CXXFLAGS = -Wall -Iinclude/ -std=c++14
 
 # Source files
 SOURCES = $(wildcard src/*.cpp)
