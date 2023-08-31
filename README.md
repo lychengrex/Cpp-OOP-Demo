@@ -44,15 +44,21 @@ The project has the following directory structure:
 MyZooProject/
 ├── src/
 │   ├── Animal.cpp
-│   ├── Mammal.cpp
 │   ├── Bird.cpp
+│   ├── Dog.cpp
+│   ├── main.cpp
+│   ├── Mammal.cpp
+│   ├── Sparrow.cpp
 │   ├── Zoo.cpp
-│   └── main.cpp
+│   └── ZooKeeper.cpp
 ├── include/
 │   ├── Animal.h
-│   ├── Mammal.h
 │   ├── Bird.h
-│   └── Zoo.h
+│   ├── Dog.h
+│   ├── Mammal.h
+│   ├── Sparrow.h
+│   ├── Zoo.h
+│   └── ZooKeeper.h
 └── Makefile
 ```
 
@@ -69,10 +75,8 @@ In the `MyZooProject`, various classes are designed to demonstrate Object-Orient
 - **Animal (Base Class)**
   - **Mammal (Derived Class)**
     - **Dog (Derived Class)**
-    - **Cat (Derived Class)**
   - **Bird (Derived Class)**
-    - **Eagle (Derived Class)**
-    - **Parrot (Derived Class)**
+    - **Sparrow (Derived Class)**
 
 ### Relationships Explained
 
@@ -80,7 +84,7 @@ In the `MyZooProject`, various classes are designed to demonstrate Object-Orient
 
 2. **Mammal and Bird**: These are derived classes from `Animal`. They may add additional attributes or methods that are specific to mammals or birds, respectively.
 
-3. **Dog, Cat, Eagle, Parrot**: These are further derived classes that inherit from `Mammal` or `Bird`. They provide concrete implementations for the `makeSound()` method.
+3. **Dog and Sparrow**: These are further derived classes that inherit from `Mammal` or `Bird`. They provide concrete implementations for the `makeSound()` method.
 
 4. **Zoo**: This class acts as a container for various animals. It demonstrates composition as it contains objects of `Animal` types.
 
@@ -142,7 +146,7 @@ This will produce an executable named `MyZooApp` in the `bin/` directory.
 After building the project, you can run it using:
 
 ```bash
-./MyZooApp.out
+./bin/MyZooApp
 ```
 
 ## Cleaning Up

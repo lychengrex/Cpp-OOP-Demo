@@ -3,7 +3,7 @@
 
 class Bird : public Animal {
    public:
-    Bird(const std::string& name);
+    Bird(const std::string& name, int age);
     ~Bird();
 
     // Overriding pure virtual function

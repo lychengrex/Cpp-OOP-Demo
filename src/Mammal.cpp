@@ -2,24 +2,25 @@
 
 int Mammal::instanceCount = 0;  // Initialize static member variable
 
-Mammal::Mammal(const String& name) : Animal(name) {
-    std::cout << "Mammal constructor called.\n";
+Mammal::Mammal(const std::string& name, int age) : Animal(name, age) {
+    std::cout << "Mammal " << name << " (age: " << age << ")"
+              << " constructor called.\n";
     instanceCount++;  // Increment static member variable
 }
 
 Mammal::~Mammal() {
-    std::cout << "Mammal destructor called.\n";
+    std::cout << "Mammal " << name << " destructor called.\n";
     instanceCount--;  // Decrement static member variable
 }
 
 void Mammal::makeSound() const {
-    std::cout << name << " says Woof!\n";
+    std::cout << "Mammal " << name << " says Woof!\n";
 }
 
 void Mammal::eat() {
-    std::cout << name << " is munching.\n";
+    std::cout << "Mammal " << name << " is munching.\n";
 }
 
-void Mammal::staticFunction() {
-    std::cout << "Static function called. Instance count: " << instanceCount << "\n";
+void Mammal::getInstanceCount() {
+    std::cout << "Mammal instance count: " << instanceCount << "\n";
 }

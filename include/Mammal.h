@@ -3,7 +3,7 @@
 
 class Mammal : public Animal {
    public:
-    Mammal(const String& name);
+    Mammal(const std::string& name, int age);
     ~Mammal();
 
     // Overriding pure virtual function
@@ -16,7 +16,7 @@ class Mammal : public Animal {
     friend void mammalFriendFunction(const Mammal& mammal);
 
     // Static member function
-    static void staticFunction();
+    static void getInstanceCount();
 
    private:
     static int instanceCount;  // Static member variable
