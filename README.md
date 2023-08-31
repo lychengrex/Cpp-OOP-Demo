@@ -60,6 +60,44 @@ MyZooProject/
 - **include/**: Contains the `.h` header files.
 - **Makefile**: Contains build instructions for the project.
 
+## Class Relationships
+
+In the `MyZooProject`, various classes are designed to demonstrate Object-Oriented Programming (OOP) principles. Here's how they relate to each other:
+
+### Class Hierarchy
+
+- **Animal (Base Class)**
+  - **Mammal (Derived Class)**
+    - **Dog (Derived Class)**
+    - **Cat (Derived Class)**
+  - **Bird (Derived Class)**
+    - **Eagle (Derived Class)**
+    - **Parrot (Derived Class)**
+
+### Relationships Explained
+
+1. **Animal**: This is the base class for all animals in the zoo. It contains common attributes like `name` and `age`, and declares a pure virtual function `makeSound()`.
+
+2. **Mammal and Bird**: These are derived classes from `Animal`. They may add additional attributes or methods that are specific to mammals or birds, respectively.
+
+3. **Dog, Cat, Eagle, Parrot**: These are further derived classes that inherit from `Mammal` or `Bird`. They provide concrete implementations for the `makeSound()` method.
+
+4. **Zoo**: This class acts as a container for various animals. It demonstrates composition as it contains objects of `Animal` types.
+
+5. **ZooKeeper**: This class interacts with the `Zoo` class to manage animals. It demonstrates the concept of friend classes as it has special access to the `Zoo` class's private members.
+
+### Polymorphism
+
+The project uses polymorphism to allow treating any derived class object as a base class object. This is particularly evident in the `Zoo` class, where an array of `Animal*` pointers can hold references to any derived class objects.
+
+### Encapsulation
+
+The project uses private and protected access specifiers to restrict access to class members, demonstrating the principle of encapsulation.
+
+### Inheritance
+
+The project demonstrates both single and multiple inheritance through its class hierarchy.
+
 ## Prerequisites
 
 - C++ Compiler (e.g., g++ with support for C++14 or higher)
